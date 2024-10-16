@@ -2,7 +2,6 @@
 
 sudo pacman -S yay \
     # Fonts
-    adobe-source-han-mono-cn-fonts \
     adobe-source-han-sans-cn-fonts \
     adobe-source-han-sans-hk-fonts \
     adobe-source-han-sans-jp-fonts \
@@ -18,12 +17,9 @@ sudo pacman -S yay \
     ttf-dejavu \
     ttf-firacode-nerd \
     ttf-font-awesome \
-    ttf-iosevka-fixed \
     ttf-jetbrains-mono \
-    ttf-material-symbols-variable-git \
     ttf-nerd-fonts-symbols \
     ttf-sarasa-gothic \
-    ttf-twemoji-color \
     wqy-microhei \
     wqy-zenhei \
     # Input Methods
@@ -39,6 +35,7 @@ sudo pacman -S yay \
     # linux-firmware \
     # base \
     # base-devel \
+    # plasma-meta \
     # amd-ucode \
     # grub \
     # efibootmgr \
@@ -56,9 +53,10 @@ sudo pacman -S yay \
     cmake \
     go \
     ghc \
-    insomnia-bin \
+    graphviz \
     nodejs \
     npm \
+    pnpm \
     plantuml \
     python-yaml \
     typescript-language-server \
@@ -76,6 +74,7 @@ sudo pacman -S yay \
     fd \
     fish \
     git \
+    github-cli \
     hyfetch \
     jq \
     kitty \
@@ -87,9 +86,11 @@ sudo pacman -S yay \
     pv \
     starship \
     strace \
+    tealdeer \
     tmux \
-    tmux-bash-completion-git \
     tree \
+    tree-sitter \
+    trash-cli \
     wget \
     # xclip \
     # File Management
@@ -97,6 +98,7 @@ sudo pacman -S yay \
     btrfs-progs \
     compsize \
     dolphin \
+    filelight \
     gdu \
     lrzip \
     lzop \
@@ -106,7 +108,6 @@ sudo pacman -S yay \
     unrar \
     # Networking
     iftop \
-    mihomo-party-bin \
     mtr \
     net-tools \
     tcpdump \
@@ -125,7 +126,6 @@ sudo pacman -S yay \
     btop \
     htop \
     iotop \
-    gpu-viewer \
     # Package Management
     yay \
     # Miscellaneous
@@ -133,9 +133,18 @@ sudo pacman -S yay \
     browserpass-firefox \
     haveged \
     pass \
-    pass-import \
     pass-otp \
     pwgen \
-    qbittorrent
+    qbittorrent \
+    stream
 
-
+yay -S adobe-source-han-mono-cn-fonts \
+    ttf-iosevka-fixed \
+    ttf-material-symbols-variable-git \
+    ttf-twemoji-color \
+    insomnia-bin \
+    tmux-bash-completion-git \
+    mihomo-party-bin \
+    gpu-viewer \
+    pass-import \
+    plasma-applets-weather-widget-2
