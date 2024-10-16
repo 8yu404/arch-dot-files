@@ -1,0 +1,195 @@
+# This configuration is designed for use in corporate network environments for clash-meta and such kind of clients like mihomo-party.
+# It also works for Linux clients, and I recommend using it in a VirtualBox environment. On Windows, proxy configurations and rules are often managed by administrators via Azure AD using a PAC file served locally. Browsers can also be tampered with by your admin through Group Policy, and applications are subject to surveillance.
+# If you have to use an HTTP proxy as a front proxy or are subject to your company's censorship and surveillance, the combination of VMess, WebSocket (WS), TLS, and CDN offers a solution.
+# This setup disguises all traffic as HTTPS. Additionally, DNS over HTTPS (DoH) is implemented to further protect DNS queries from interception and monitoring.
+allow-lan: true
+mode: rule
+ipv6: true
+bind-address: "*"
+log-level: debug
+unified-delay: true
+tcp-concurrent: true
+global-client-fingerprint: firefox
+find-process-mode: always
+profile:
+  store-selected: true
+  store-fake-ip: false
+
+tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - any:53
+    - tcp://any:53
+  auto-route: true
+  auto-detect-interface: true
+  auto-redir: true
+  routing-mark: 6666
+
+dns:
+  enable: true
+  ipv6: true
+  prefer-h3: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  use-hosts: true
+  fake-ip-filter:
+    - "*.lan"
+    - "*.local"
+    - "*.smtp.*"
+    - "10.0.0.0/8"
+  proxy-server-nameserver:
+    - (The LAN nameserver of your windows host machine, usually get automatically by DHCP)
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  nameserver:
+    - https://dns.google/dns-query
+    - https://dns.cloudflare.com/dns-query
+    - https://[2001:4860:4860::8888]/dns-query
+    - https://[2001:4860:4860::8844]/dns-query
+    - https://[2001:4860:4860::6464]/dns-query
+    - https://[2001:4860:4860::64]/dns-query
+  fallback:
+    - tcp://1.1.1.1
+    - https://1.1.1.1/dns-query
+    - https://dns.google/dns-query
+    - https://8888.google/dns-query
+    - https://1.0.0.1/dns-query
+  fallback-filter:
+    ipcidr:
+      - 240.0.0.0/4
+
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+
+proxies:
+
+  - name: "dns-out"
+    type: dns
+
+  - type: http
+    name: "HTTP Front Proxy"
+    server: (The http front proxy ip or dmain that you can use on your windows host machine)
+    port: 8080
+    # Optional: Add username and password if authentication is required
+    # username: "your-username"
+    # password: "your-password"
+
+  - name: "VMess WS TLS US"
+    dialer-proxy: HTTP Front Proxy
+    # Your xray proxy domain, it may support second-level domains but not third-level domains.
+    server: sub.example.com
+    # Please ensure that you use ports supported by the CDN.
+    port: 443
+    type: vmess
+    # Your xray proxy uuid
+    uuid: 00000000-1111-2222-3333-444444444444
+    alterId: 0
+    cipher: auto
+    tls: true
+    # If your traffic is monitored by Zscaler (man-in-the-middle attack/certificate replacement)
+    # You need to import the certificate from your Windows host machine to the virtual machine and set this option to true.
+    skip-cert-vertify: true
+    # Your xray proxy domain
+    servername: sub.example.com
+    network: ws
+    ws-opts:
+    # The Nginx path for your Xray proxy's masquerade site, Nginx will forward traffic to the proxy server.
+      path: "/abcdefg"
+      headers:
+      # Your xray proxy domain
+        { Host: sub.example.com }
+
+rule-providers:
+
+  tg:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/DivineEngine/Profiles/master/Clash/RuleSet/Extra/Telegram/Telegram.yaml"
+    path: ./ruleset/tg.yaml
+    interval: 86400
+
+  ban-ad:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanAD.yaml"
+    path: ./ruleset/ban-ad.yaml
+    interval: 86400
+  
+  easylist:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyList.yaml"
+    path: ./ruleset/easylist.yaml
+    interval: 86400
+  
+  easypriv:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyPrivacy.yaml"
+    path: ./ruleset/easypriv.yaml
+    interval: 86400
+  
+  easylist-cn:
+    type: http
+    behavior: domain
+    url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Providers/BanEasyListChina.yaml"
+    path: ./ruleset/easylist-cn.yaml
+    interval: 86400
+
+proxy-groups:
+  - name: "Proxy Chain"
+    type: select
+    proxies:
+      - "HTTP Front Proxy"
+      - "VMess WS TLS US"
+      - "dns-out"
+      - "DIRECT"
+
+# Rule settings
+rules:
+  # Ad
+  - RULE-SET,ban-ad,REJECT
+  - RULE-SET,easylist,REJECT
+  - RULE-SET,easylist-cn,REJECT
+  - RULE-SET,easypriv,REJECT
+  - GEOSITE,category-ads-all,REJECT
+  # Local
+  - DOMAIN-KEYWORD,local,DIRECT
+  - IP-CIDR,10.0.2.0/24,DIRECT
+  - IP-CIDR,0.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,100.64.0.0/10,DIRECT,no-resolve
+  - IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+  - IP-CIDR,169.254.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+  - IP-CIDR,192.0.0.0/24,DIRECT,no-resolve
+  - IP-CIDR,192.0.2.0/24,DIRECT,no-resolve
+  - IP-CIDR,192.88.99.0/24,DIRECT,no-resolve
+  - IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+  - IP-CIDR,198.18.0.0/15,DIRECT,no-resolve
+  - IP-CIDR,198.51.100.0/24,DIRECT,no-resolve
+  - IP-CIDR,203.0.113.0/24,DIRECT,no-resolve
+  - IP-CIDR,224.0.0.0/3,DIRECT,no-resolve
+  - IP-CIDR,::1/128,DIRECT,no-resolve
+  - IP-CIDR,fc00::/7,DIRECT,no-resolve
+  - IP-CIDR,fe80::/10,DIRECT,no-resolve
+  - GEOIP,LAN,DIRECT
+  - RULE-SET,tg,Proxy Chain
+  # Set the rules here to ensure that your corporate traffic routes directly through the HTTP proxy.
+  - DOMAIN-KEYWORD,your-company-domain.com,HTTP Front Proxy
+  - DOMAIN-KEYWORD, your-company-service.office.com, HTTP Front Proxy
+  
+  # Final
+  - MATCH,Proxy Chain
