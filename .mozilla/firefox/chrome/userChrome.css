@@ -6,3 +6,7 @@
 #main-window:not([tabsintitlebar="true"]) #TabsToolbar {
     visibility: collapse !important;
 }
+/* Hide window controls and title bar */
+#titlebar {
+    display: none !important;
+}
