@@ -48,6 +48,7 @@ sudo pacman -S yay \
     packagekit-qt5 \
     packagekit-qt6 \
     ufw \
+    libdbusmenu-glib \
     # Development Tools
     bash-language-server \
     cmake \
@@ -121,6 +122,7 @@ sudo pacman -S yay \
     glow \
     gwenview \
     imagemagick \
+    kolourpaint \
     spectacle \
     # System Monitoring
     btop \
