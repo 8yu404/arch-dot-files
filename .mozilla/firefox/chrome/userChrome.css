@@ -10,3 +10,21 @@
 #titlebar {
     display: none !important;
 }
+
+/* Auto-hide the address bar */
+#navigator-toolbox {
+    --uc-titlebar-height: 42px; /* Adjust this value as needed */
+    --uc-urlbar-height: 42px;  /* Adjust this value as needed */
+    --uc-toolbar-height: 42px; /* Adjust this value as needed */
+    --uc-toolbar-overlap: 3px; /* Adjust this value as needed */
+    position: relative;
+}
+
+#nav-bar {
+    margin-top: calc(-1 * var(--uc-urlbar-height) + var(--uc-toolbar-overlap));
+    transition: margin-top 0.2s ease-in-out;
+}
+
+#navigator-toolbox:hover #nav-bar {
+    margin-top: 0;
+}
