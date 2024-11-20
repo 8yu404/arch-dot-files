@@ -47,7 +47,7 @@ sudo pacman -S yay \
     packagekit \
     packagekit-qt5 \
     packagekit-qt6 \
-    ufw \
+    # ufw \
     libdbusmenu-glib \
     # Development Tools
     bash-language-server \
@@ -94,12 +94,14 @@ sudo pacman -S yay \
     trash-cli \
     wget \
     # xclip \
+    # wl-clipboard \
     # File Management
     ark \
     btrfs-progs \
     compsize \
     dolphin \
     filelight \
+    partitionmanager \
     gdu \
     lrzip \
     lzop \
@@ -120,10 +122,14 @@ sudo pacman -S yay \
     # Media and Graphics
     djvulibre \
     glow \
+    libreoffice-fresh \
     gwenview \
     imagemagick \
     kolourpaint \
     spectacle \
+    okular \
+    xournalpp \
+    pandoc-cli \
     # System Monitoring
     btop \
     htop \
@@ -136,6 +142,7 @@ sudo pacman -S yay \
     haveged \
     pass \
     pass-otp \
+    qtpass \
     pwgen \
     qbittorrent \
     stream
