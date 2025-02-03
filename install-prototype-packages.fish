@@ -12,6 +12,7 @@ sudo pacman -S yay \
     adobe-source-han-serif-tw-fonts \
     noto-fonts-cjk \
     noto-fonts-extra \
+    noto-fonts-emoji \
     ttf-arphic-ukai \
     ttf-arphic-uming \
     ttf-dejavu \
@@ -145,7 +146,108 @@ sudo pacman -S yay \
     qtpass \
     pwgen \
     qbittorrent \
-    stream
+    stream \
+    archlinuxcn-keyring \
+    mesa \
+    lib32-mesa \
+    xf86-video-amdgpu \
+    vulkan-radeon \
+    lib32-vulkan-radeon \
+    lib32-vulkan-driver \
+    lib32-vulkan-mesa-layers \
+    libva-mesa-driver \
+    lib32-libva-mesa-driver \
+    mesa-vdpau \
+    lib32-mesa-vdpau \
+    pacman-contrib \
+    mlocate \
+    reflector \
+    tlp \
+    tlp-rdw \
+    ethtool \
+    tlpui \
+    linux-zen-headers \
+    libappindicator-gtk3 \
+    weechat \
+    element-desktop \
+    kchmviewer \
+    ruby \
+    ruby-docs \
+    ruby-default-gems \
+    ruby-bundled-gems \
+    ruby-stdlib \
+    tcl \
+    python-cryptography \
+    python-requests-toolbelt \
+    python-pysocks
+    python-curio \
+    python-trio \
+    python-sniffio \
+    python-lxml-docs \
+    python-genshi \
+    tk \
+    python-olefile \
+    python-defusedxml \
+    python-cjkwrap \
+    qt6-connectivity \
+    qt6-serialport \
+    python-fonttools \
+    python-fs \
+    python-lz4 \
+    python-matplotlib \
+    # blas-openblas \
+    python-railroad-diagrams \
+    python-jinja \
+    python-babel \
+    # pyside6 \
+    python-wxpython \
+    # webkit2gtk-4.1 \
+    python-pypubsub \
+    python-cairo \
+    python-cairocffi \
+    python-xcffib \
+    python-tornado \
+    python-pycurl \
+    python-pycares \
+    python-twisted \
+    python-graphviz \
+    python-bcrypt \
+    python-h2 \
+    python-priority \
+    python-pyasn1 \
+    python-pyopenssl \
+    python-pyserial \
+    python-service-identity \
+    # texlive-binextra \
+    # texlive-fontsrecommended \
+    # texlive-latexrecommended \
+    python-pyqt5 \
+    python-opengl \
+    # qt5-multimedia \
+    # qt5-tools \
+    # qt5-xmlpatterns \
+    # qt5-serialport \
+    # qt5-websockets \
+    # qt5-connectivity \
+    # qt5-remoteobjects \
+    # qt5-speech \
+    # qt5-quick3d \
+    # qt5-sensors \
+    python-reportlab \
+    python-sympy \
+    # ipython \
+    # python-symengine \
+    python-uharfbuzz \
+    python-unicodedata2 \
+    python-zopfli \
+    # speech-dispatcher \
+    # geoclue \
+    # gst-libav \
+    # gst-plugins-bad \
+    # gst-plugins-good \
+    # espeakng \
+    # festival \
+    # gspell
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -156,4 +258,5 @@ yay -S adobe-source-han-mono-cn-fonts \
     mihomo-party-bin \
     gpu-viewer \
     pass-import \
+    # cpu-x \
     plasma-applets-weather-widget-2
