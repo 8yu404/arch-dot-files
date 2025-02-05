@@ -7,6 +7,7 @@ set -x NODE_EXTRA_CA_CERTS /etc/ssl/certs/ca-certificates.crt
 set alfredbirk.tailwind-documentation \
     bierner.emojisense \
     bierner.markdown-mermaid \
+    bmalehorn.vscode-fish \
     bodil.file-browser \
     bradlc.vscode-tailwindcss \
     catppuccin.catppuccin-vsc \
@@ -16,6 +17,7 @@ set alfredbirk.tailwind-documentation \
     donjayamanne.githistory \
     dsznajder.es7-react-js-snippets \
     editorconfig.editorconfig \
+    eg2.vscode-npm-script \
     esbenp.prettier-vscode \
     foxundermoon.shell-format \
     gencer.html-slim-scss-css-class-completion \
@@ -24,8 +26,14 @@ set alfredbirk.tailwind-documentation \
     jebbs.plantuml \
     mechatroner.rainbow-csv \
     mhutchie.git-graph \
+    ms-python.black-formatter \
+    ms-python.isort \
+    ms-python.python \
+    ms-toolsai.jupyter \
     ms-vscode.hexeditor \
+    njpwerner.autodocstring \
     oderwat.indent-rainbow \
+    pkief.markdown-checkbox \
     pkief.material-icon-theme \
     redhat.vscode-xml \
     shardulm94.trailing-spaces \
@@ -35,7 +43,11 @@ set alfredbirk.tailwind-documentation \
     tamasfe.even-better-toml \
     timonwong.shellcheck \
     wix.vscode-import-cost \
-    yzhang.markdown-all-in-one
+    yzhang.markdown-all-in-one \
+    zainchen.json
+    # golang.go \
+    # zxh404.vscode-proto3 \
+    # rust-lang.rust-analyzer \
 
 # Install each extension
 for extension in $extensions

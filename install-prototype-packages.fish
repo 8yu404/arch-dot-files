@@ -125,12 +125,15 @@ sudo pacman -S yay \
     glow \
     libreoffice-fresh \
     gwenview \
+    koko \
     imagemagick \
     kolourpaint \
     spectacle \
     okular \
     xournalpp \
     pandoc-cli \
+    kdegraphics-thumbnailers \
+    kcolorchooser \
     # System Monitoring
     btop \
     htop \
@@ -159,6 +162,7 @@ sudo pacman -S yay \
     lib32-libva-mesa-driver \
     mesa-vdpau \
     lib32-mesa-vdpau \
+    libva-utils \
     pacman-contrib \
     mlocate \
     reflector \
@@ -189,17 +193,14 @@ sudo pacman -S yay \
     python-olefile \
     python-defusedxml \
     python-cjkwrap \
-    qt6-connectivity \
-    qt6-serialport \
     python-fonttools \
     python-fs \
     python-lz4 \
     python-matplotlib \
-    # blas-openblas \
     python-railroad-diagrams \
     python-jinja \
     python-babel \
-    # pyside6 \
+    pyside6 \
     python-wxpython \
     # webkit2gtk-4.1 \
     python-pypubsub \
@@ -223,31 +224,93 @@ sudo pacman -S yay \
     # texlive-latexrecommended \
     python-pyqt5 \
     python-opengl \
-    # qt5-multimedia \
-    # qt5-tools \
-    # qt5-xmlpatterns \
-    # qt5-serialport \
-    # qt5-websockets \
-    # qt5-connectivity \
-    # qt5-remoteobjects \
-    # qt5-speech \
-    # qt5-quick3d \
-    # qt5-sensors \
+    qt5-multimedia \
+    qt5-tools \
+    qt5-xmlpatterns \
+    qt5-serialport \
+    qt6-serialport \
+    qt6-serialbus \
+    qt5-websockets \
+    qt5-connectivity \
+    qt6-connectivity \
+    qt5-remoteobjects \
+    qt6-remoteobjects \
+    qt5-speech \
+    qt5-quick3d \
+    qt6-3d \
+    qt5-sensors \
+    qt6-scxml \
+    qt6-networkauth \
+    qt6-location \
+    qt6-httpserver \
+    qt6-graphs \
+    qt6-datavis3d \
+    qt6-charts \
+    gstreamer \
+    gst-libav \
+    gst-plugins-bad \
+    gst-plugins-good \
+    gst-plugins-ugly \
+    gst-plugin-pipewire \
+    gst-plugin-va \
+    xorg-fonts-misc \
+    xorg-mkfontscale \
+    libid3tag \
     python-reportlab \
     python-sympy \
-    # ipython \
-    # python-symengine \
+    ipython \
+    python-black \
+    python-tokenize-rt \
+    python-aiohttp \
+    gunicorn \
+    python-eventlet \
+    python-psycopg2 \
+    python-httplib2 \
+    python-pyzmq \
+    python-gevent \
+    python-setproctitle \
+    python-aiodns \
+    python-colorama \
+    python-pickleshare \
+    yapf \
+    python-symengine \
     python-uharfbuzz \
     python-unicodedata2 \
     python-zopfli \
-    # speech-dispatcher \
-    # geoclue \
-    # gst-libav \
-    # gst-plugins-bad \
-    # gst-plugins-good \
-    # espeakng \
-    # festival \
-    # gspell
+    speech-dispatcher \
+    flite \
+    geoclue \
+    espeak-ng \
+    festival \
+    gspell \
+    mpv \
+    yt-dlp \
+    rtmpdump \
+    aria2 \
+    python-mutagen \
+    python-websockets \
+    python-xattr \
+    python-pyxattr \
+    python-secretstorage \
+    vlc \
+    android-studio-canary \
+    android-sdk-cmdline-tools-latest-dummy \
+    android-sdk-build-tools-dummy \
+    android-sdk-platform-tools-dummy \
+    android-platform-dummy \
+    android-emulator-dummy \
+    gtk2 \
+    gnome-themes-standard \
+    gtk-engines \
+    obs-studio \
+    # sndio \
+    # qrcodegencpp-cmake \
+    v4l2loopback-dkms \
+    v4l2loopback-utils \
+    v4l-utils \
+    wf-recorder \
+    gphoto2 \
+    kamera
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -258,5 +321,10 @@ yay -S adobe-source-han-mono-cn-fonts \
     mihomo-party-bin \
     gpu-viewer \
     pass-import \
-    # cpu-x \
-    plasma-applets-weather-widget-2
+    cpu-x \
+    plasma-applets-weather-widget-2 \
+    phantomjs \
+    obs-browser \
+    obs-vkcapture \
+    lib32-obs-vkcapture \
+    python-lsp-all
