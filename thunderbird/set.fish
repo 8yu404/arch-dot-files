@@ -1,0 +1,1 @@
+git clone https://catppuccin/thunderbird.git

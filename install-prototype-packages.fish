@@ -44,6 +44,12 @@ sudo pacman -S yay \
     # virtualbox-guest-utils \
     alsa-firmware \
     sof-firmware \
+    pipewire \
+    pipewire-audio \
+    pipewire-alsa \
+    pipewire-pulse \
+    pipewire-jack \
+    wireplumber \
     openssh \
     packagekit \
     packagekit-qt5 \
@@ -73,19 +79,26 @@ sudo pacman -S yay \
     bc \
     bind \
     difftastic \
+    dnsutils \
     fd \
+    file \
     fish \
+    ffmpeg \
     git \
     github-cli \
+    gnupg \
     hyfetch \
     jq \
     kitty \
     konsole
     less \
+    lsof \
     man-pages \
     mono \
     moreutils \
     pv \
+    ripgrep \
+    smartmonttools \
     starship \
     strace \
     tealdeer \
@@ -93,9 +106,10 @@ sudo pacman -S yay \
     tree \
     tree-sitter \
     trash-cli \
+    usbutils \
     wget \
     # xclip \
-    # wl-clipboard \
+    wl-clipboard \
     # File Management
     ark \
     btrfs-progs \
@@ -110,6 +124,8 @@ sudo pacman -S yay \
     p7zip \
     unarchiver \
     unrar \
+    libarchive \
+    zstd \
     # Networking
     iftop \
     mtr \
@@ -293,12 +309,6 @@ sudo pacman -S yay \
     python-pyxattr \
     python-secretstorage \
     vlc \
-    android-studio-canary \
-    android-sdk-cmdline-tools-latest-dummy \
-    android-sdk-build-tools-dummy \
-    android-sdk-platform-tools-dummy \
-    android-platform-dummy \
-    android-emulator-dummy \
     gtk2 \
     gnome-themes-standard \
     gtk-engines \
@@ -310,7 +320,16 @@ sudo pacman -S yay \
     v4l-utils \
     wf-recorder \
     gphoto2 \
-    kamera
+    kamera \
+    # PYTHON Packages
+    python-jedi \
+    python-lsp-server \
+    python-rope \
+    # python-pyflakes \
+    python-pylint \
+    python-pylint-venv
+    # TODO: discord
+    # TODO: docker
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -323,8 +342,24 @@ yay -S adobe-source-han-mono-cn-fonts \
     pass-import \
     cpu-x \
     plasma-applets-weather-widget-2 \
+    qt6-5compat \
+    qt6-declartive \
+    # sudo perl ./opt/texlive-installer/install-tl
+    # sudo ln -s /usr/local/texlive/2024/bin/x86_64-linux/* /usr/local/bin/
+    # tlmgr update --all
+    texlive-installer \
+    android-studio-canary \
+    android-sdk-cmdline-tools-latest-dummy \
+    android-sdk-build-tools-dummy \
+    # sudo ln -s ~/Android/Sdk/platform-tools/adb /usr/local/bin/adb
+    # sudo ln -s ~/Android/Sdk/platform-tools/fastboot /usr/local/bin/fastboot
+    android-sdk-platform-tools-dummy \
+    android-platform-dummy \
+    android-emulator-dummy \
     phantomjs \
     obs-browser \
     obs-vkcapture \
     lib32-obs-vkcapture \
-    python-lsp-all
+    python-
+    python-pylsp-rope \
+    cntr-bin

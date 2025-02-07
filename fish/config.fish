@@ -29,18 +29,14 @@ set fish_pager_color_selected_background --reverse
 set fish_cursor_default block blink
 set fish_cursor_insert line blink
 set fish_cursor_replace_one underscore blink
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -Ux PAGER less
+set -Ux LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT"
+set -Ux SYSTEMD_LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT --quit-if-one-screen --chop-long-lines --no-init"
+set -Ux LESSOPEN ""
 function mark_prompt_start --on-event fish_prompt
     echo -en "\e]133;A\e\\"
 end
 function greeting
     set_color -o EEA9A9; date +%T; set_color normal
-end
-function pass
-    if test (count $argv) -eq 2 -a $argv[1] = "show"
-        command pass show $argv[2] | xclip -selection clipboard
-    else
-        command pass $argv
-    end
 end
 starship init fish | source
