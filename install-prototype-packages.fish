@@ -338,6 +338,8 @@ sudo pacman -S yay \
     # python-pylint \
     # python-pylint-venv \
     # python-pygments \
+    # neovim
+    # python-neovim
     # fzf \
     # lazygit \
     # lua-language-server \
