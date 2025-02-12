@@ -64,6 +64,7 @@ sudo pacman -S yay \
     graphviz \
     nodejs \
     npm \
+    # npm-check-updates \
     pnpm \
     plantuml \
     python-yaml \
@@ -78,6 +79,7 @@ sudo pacman -S yay \
     bat \
     bc \
     bind \
+    # diffutils \
     difftastic \
     dnsutils \
     fd \
@@ -96,6 +98,7 @@ sudo pacman -S yay \
     man-pages \
     mono \
     moreutils \
+    # procs \
     pv \
     ripgrep \
     smartmonttools \
@@ -120,6 +123,7 @@ sudo pacman -S yay \
     gdu \
     lrzip \
     lzop \
+    # nfs-utils \
     ntfs-3g \
     p7zip \
     unarchiver \
@@ -166,7 +170,7 @@ sudo pacman -S yay \
     pwgen \
     qbittorrent \
     stream \
-    archlinuxcn-keyring \
+    # archlinuxcn-keyring \
     mesa \
     lib32-mesa \
     xf86-video-amdgpu \
@@ -322,12 +326,30 @@ sudo pacman -S yay \
     gphoto2 \
     kamera \
     # PYTHON Packages
-    python-jedi \
-    python-lsp-server \
-    python-rope \
+    # python-build \
+    # python-flit-core \
+    # python-installer \
+    # python-jedi \
+    # python-lsp-server \
+    # python-rope \
     # python-pyflakes \
-    python-pylint \
-    python-pylint-venv
+    # python-mccabe \
+    # flake8 \
+    # python-pylint \
+    # python-pylint-venv \
+    # python-pygments \
+    # fzf \
+    # lazygit \
+    # lua-language-server \
+    # zoxide \
+    # luarocks \
+    # lsd \
+    # lolcat \
+    # lld \
+    # figlet \
+    # calligra \
+    # C LSP
+    # ccls \
     # TODO: discord
     # TODO: docker
 
@@ -360,6 +382,6 @@ yay -S adobe-source-han-mono-cn-fonts \
     obs-browser \
     obs-vkcapture \
     lib32-obs-vkcapture \
-    python-
-    python-pylsp-rope \
+    # python-lsp-all \
+    # python-pylsp-rope \
     cntr-bin

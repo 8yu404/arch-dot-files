@@ -28,7 +28,7 @@ set alfredbirk.tailwind-documentation \
     mhutchie.git-graph \
     ms-python.black-formatter \
     ms-python.isort \
-    ms-python.pylint \
+    # ms-python.pylint \
     ms-python.python \
     ms-toolsai.jupyter \
     ms-vscode.hexeditor \
