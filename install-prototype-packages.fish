@@ -64,7 +64,7 @@ sudo pacman -S yay \
     graphviz \
     nodejs \
     npm \
-    # npm-check-updates \
+    npm-check-updates \
     pnpm \
     plantuml \
     python-yaml \
@@ -79,7 +79,7 @@ sudo pacman -S yay \
     bat \
     bc \
     bind \
-    # diffutils \
+    diffutils \
     difftastic \
     dnsutils \
     fd \
@@ -98,7 +98,7 @@ sudo pacman -S yay \
     man-pages \
     mono \
     moreutils \
-    # procs \
+    procs \
     pv \
     ripgrep \
     smartmonttools \
@@ -386,4 +386,5 @@ yay -S adobe-source-han-mono-cn-fonts \
     lib32-obs-vkcapture \
     # python-lsp-all \
     # python-pylsp-rope \
-    cntr-bin
+    cntr-bin \
+    neovim-symlinks

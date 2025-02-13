@@ -29,6 +29,8 @@ set fish_pager_color_selected_background --reverse
 set fish_cursor_default block blink
 set fish_cursor_insert line blink
 set fish_cursor_replace_one underscore blink
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
 set -Ux PAGER less
 set -Ux LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT"
 set -Ux SYSTEMD_LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT --quit-if-one-screen --chop-long-lines --no-init"
@@ -36,7 +38,7 @@ set -Ux LESSOPEN ""
 function mark_prompt_start --on-event fish_prompt
     echo -en "\e]133;A\e\\"
 end
-function greeting
-    set_color -o EEA9A9; date +%T; set_color normal
+function nvim
+    env NVIM_APPNAME="nvim-Lazyman" command nvim $argv
 end
 starship init fish | source
