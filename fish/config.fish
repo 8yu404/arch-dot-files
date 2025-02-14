@@ -35,10 +35,16 @@ set -Ux PAGER less
 set -Ux LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT"
 set -Ux SYSTEMD_LESS "--RAW-CONTROL-CHARS --mouse --wheel-lines=5 --LONG-PROMPT --quit-if-one-screen --chop-long-lines --no-init"
 set -Ux LESSOPEN ""
+set -Ux GPG_TTY (tty)
+set -Ux SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+gpg-connect-agent /bye
+function greeting
+    set_color -o EEA9A9; date +%T; set_color normal
+end
 function mark_prompt_start --on-event fish_prompt
     echo -en "\e]133;A\e\\"
 end
 function nvim
-    env NVIM_APPNAME="nvim-Lazyman" command nvim $argv
+    env NVIM_APPNAME="nvim-Lazyman" nvim $argv
 end
 starship init fish | source

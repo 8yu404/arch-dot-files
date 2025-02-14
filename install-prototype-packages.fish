@@ -101,6 +101,7 @@ sudo pacman -S yay \
     procs \
     pv \
     ripgrep \
+    # sdcv \
     smartmonttools \
     starship \
     strace \
@@ -130,6 +131,18 @@ sudo pacman -S yay \
     unrar \
     libarchive \
     zstd \
+    # RANGER RELATED
+    atool \
+    cpio \
+    lha \
+    unace \
+    highlight \
+    mediainfo \
+    perl-image-exiftool \
+    python-bidi \
+    python-ueberzug \
+    transmission-cli \
+    w3m \
     # Networking
     iftop \
     mtr \
@@ -150,6 +163,7 @@ sudo pacman -S yay \
     kolourpaint \
     spectacle \
     okular \
+    poppler \
     xournalpp \
     pandoc-cli \
     kdegraphics-thumbnailers \
@@ -338,8 +352,8 @@ sudo pacman -S yay \
     # python-pylint \
     # python-pylint-venv \
     # python-pygments \
+    # NEOVIM RELATED
     # neovim
-    # python-neovim
     # fzf \
     # lazygit \
     # lua-language-server \
@@ -350,10 +364,15 @@ sudo pacman -S yay \
     # lld \
     # figlet \
     # calligra \
-    # C LSP
     # ccls \
     # TODO: discord
     # TODO: docker
+    # YUBIKEY RELATED
+    # sudo systemctl enable pcscd.service
+    # sudo systemctl enable pcscd.socket
+    yubikey-manager
+    yubikey-personalization
+    pcsclite
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -387,4 +406,6 @@ yay -S adobe-source-han-mono-cn-fonts \
     # python-lsp-all \
     # python-pylsp-rope \
     cntr-bin \
-    neovim-symlinks
+    neovim-git \
+    neovim-symlinks \
+    ranger-git
