@@ -168,6 +168,18 @@ sudo pacman -S yay \
     pandoc-cli \
     kdegraphics-thumbnailers \
     kcolorchooser \
+    shotcut \
+    swh-plugins \
+    gimp \
+    krita \
+    kimageformats5 \
+    inkscape \
+    gvfs \
+    fig2dev \
+    pstoedit \
+    darktable \
+    gnuplot \
+    dcraw \
     # System Monitoring
     btop \
     htop \
