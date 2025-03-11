@@ -431,4 +431,5 @@ yay -S adobe-source-han-mono-cn-fonts \
     ranger-git \
     waydroid \
     repo \
-    ncurses5-compat-libs
+    ncurses5-compat-libs \
+    python-pyclip

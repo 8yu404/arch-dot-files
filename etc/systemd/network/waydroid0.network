@@ -1,0 +1,6 @@
+[Match]
+Name=waydroid0
+[Network]
+Address=192.168.24.1/24
+DHCPServer=true
+IPForward=yes
