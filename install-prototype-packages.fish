@@ -382,9 +382,17 @@ sudo pacman -S yay \
     # YUBIKEY RELATED
     # sudo systemctl enable pcscd.service
     # sudo systemctl enable pcscd.socket
-    yubikey-manager
-    yubikey-personalization
-    pcsclite
+    yubikey-manager \
+    yubikey-personalization \
+    pcsclite \
+    # Waydroid build dependancy
+    git-lfs \
+    lib32-sdl12-compat \
+    pngcrush \
+    rsync \
+    schedtool \
+    squashfs-tools \
+    jdk11-openjdk
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -420,4 +428,7 @@ yay -S adobe-source-han-mono-cn-fonts \
     cntr-bin \
     neovim-git \
     neovim-symlinks \
-    ranger-git
+    ranger-git \
+    waydroid \
+    repo \
+    ncurses5-compat-libs
