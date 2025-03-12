@@ -12,6 +12,6 @@ firewall-cmd --permanent --zone=drop --set-target=DROP
 firewall-cmd --permanent --zone=internal --set-target=ACCEPT
 firewall-cmd --permanent --zone=external --add-masquerade
 # Error: INVALID_RULE: bad attribute 'zone'
-firewall-cmd --permanent --zone=internal --add-rich-rule='rule family="ipv4" source interface="wlan0" accept'
-firewall-cmd --permanent --zone=external --add-rich-rule='rule family="ipv4" destination interface="waydroid0" accept'
+firewall-cmd --permanent --zone=internal --add-rich-rule='rule family="ipv4" source address="172.16.0.1/24" accept'
+firewall-cmd --permanent --zone=external --add-rich-rule='rule family="ipv4" destination address="192.168.24.1/24" accept'
 firewall-cmd --reload
