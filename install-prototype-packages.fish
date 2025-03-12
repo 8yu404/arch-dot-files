@@ -392,7 +392,8 @@ sudo pacman -S yay \
     rsync \
     schedtool \
     squashfs-tools \
-    jdk11-openjdk
+    jdk11-openjdk \
+    lzip
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -432,4 +433,5 @@ yay -S adobe-source-han-mono-cn-fonts \
     waydroid \
     repo \
     ncurses5-compat-libs \
-    python-pyclip
+    python-pyclip \
+    waydroid-script-git
