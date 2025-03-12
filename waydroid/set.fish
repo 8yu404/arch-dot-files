@@ -6,20 +6,12 @@ wget -O - https://raw.githubusercontent.com/waydroid/android_vendor_waydroid/lin
 nvim .repo/manifests/default.xml
 repo sync
 
-firewall-cmd --zone=internal --add-interface=waydroid0
-firewall-cmd --zone=external --add-interface=wlan0
-firewall-cmd --zone=drop --set-target=DROP
-firewall-cmd --zone=internal --set-target=ACCEPT
-firewall-cmd --zone=external --add-masquerade
-firewall-cmd --zone=internal --add-rich-rule='rule family="ipv4" source zone="external" accept'
-firewall-cmd --zone=external --add-rich-rule='rule family="ipv4" destination zone="internal" accept'
-firewall-cmd --reload
-
 firewall-cmd --permanent --zone=internal --add-interface=waydroid0
 firewall-cmd --permanent --zone=external --add-interface=wlan0
 firewall-cmd --permanent --zone=drop --set-target=DROP
 firewall-cmd --permanent --zone=internal --set-target=ACCEPT
 firewall-cmd --permanent --zone=external --add-masquerade
-firewall-cmd --permanent --zone=internal --add-rich-rule='rule family="ipv4" source zone="external" accept'
-firewall-cmd --permanent --zone=external --add-rich-rule='rule family="ipv4" destination zone="internal" accept'
+# Error: INVALID_RULE: bad attribute 'zone'
+firewall-cmd --permanent --zone=internal --add-rich-rule='rule family="ipv4" source interface="wlan0" accept'
+firewall-cmd --permanent --zone=external --add-rich-rule='rule family="ipv4" destination interface="waydroid0" accept'
 firewall-cmd --reload
