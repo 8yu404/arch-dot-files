@@ -1,0 +1,2 @@
+sudo zstd -d /lib/firmware/amdnpu/1502_00/npu.sbin.1.5.2.380.zst -o /lib/firmware/amdnpu/1502_00/npu.sbin.1.5.2.380
+sudo ln /lib/firmware/amdnpu/1502_00/npu.sbin.1.5.2.380 /lib/firmware/amdnpu/npu.sbin
