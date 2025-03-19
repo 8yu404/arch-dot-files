@@ -377,7 +377,9 @@ sudo pacman -S yay \
     # figlet \
     # calligra \
     # ccls \
-    # TODO: discord
+    # DISCORD
+    python-pyelftools
+    python-capstone
     # TODO: docker
     # YUBIKEY RELATED
     # sudo systemctl enable pcscd.service
@@ -393,7 +395,29 @@ sudo pacman -S yay \
     schedtool \
     squashfs-tools \
     jdk11-openjdk \
-    lzip
+    lzip \
+    # Texlive
+    texlive \
+    texlive-lang \
+    biber \
+    # texlive-doc \
+    dialog \
+    ed \
+    perl-file-homedir \
+    perl-ipc-system-simple \
+    perl-tk \
+    perl-yaml-tiny \
+    wdiff \
+    ghostscript \
+    fontforge \
+    # BTC
+    electrum
+    python-anyio
+    python-rpyc
+    # MONERO
+    monero-gui
+    # Others
+    trash-cli
 
 yay -S adobe-source-han-mono-cn-fonts \
     ttf-iosevka-fixed \
@@ -411,7 +435,7 @@ yay -S adobe-source-han-mono-cn-fonts \
     # sudo perl ./opt/texlive-installer/install-tl
     # sudo ln -s /usr/local/texlive/2024/bin/x86_64-linux/* /usr/local/bin/
     # tlmgr update --all
-    texlive-installer \
+    # texlive-installer \
     android-studio-canary \
     android-sdk-cmdline-tools-latest-dummy \
     android-sdk-build-tools-dummy \
@@ -434,4 +458,6 @@ yay -S adobe-source-han-mono-cn-fonts \
     repo \
     ncurses5-compat-libs \
     python-pyclip \
-    waydroid-script-git
+    waydroid-script-git \
+    lyx \
+    discord-electron-openasar
