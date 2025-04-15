@@ -4,7 +4,7 @@
 
 set -x NODE_EXTRA_CA_CERTS /etc/ssl/certs/ca-certificates.crt
 
-set alfredbirk.tailwind-documentation \
+set extensions alfredbirk.tailwind-documentation \
     bierner.emojisense \
     bierner.markdown-mermaid \
     bmalehorn.vscode-fish \
